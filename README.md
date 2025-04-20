@@ -3,7 +3,7 @@
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](http://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: BSD](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-![repo size](https://img.shields.io/github/repo-size/Osaka-University-Harada-Laboratory/sda5f_tutorials)
+![repo size](https://img.shields.io/github/repo-size/UOsaka-Harada-Laboratory/sda5f_tutorials)
 
 - ROS packages for YASKAWA MOTOMAN SDA5F tutorial.
   - [sda5f_motion_plan](/catkin_ws/src/sda5f_motion_plan): A package to execute example motions with dual arms.
@@ -26,7 +26,7 @@
 
 - [Ubuntu 20.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=20.04+LTS)
   - [ROS Noetic](https://wiki.ros.org/noetic/Installation/Ubuntu)
-    - [onrobot](https://github.com/Osaka-University-Harada-Laboratory/onrobot)
+    - [onrobot](https://github.com/UOsaka-Harada-Laboratory/onrobot)
     - [Byobu](https://www.byobu.org/)
 - [YASKAWA Motoman SDA5F](https://www.motoman.com/en-us/products/robots/industrial/assembly-handling/sda-series/sda5f)  
 - [OnRobot RG6](https://onrobot.com/en/products/rg6-gripper)
@@ -51,7 +51,7 @@
         ```
 3. Build the docker environment as below  
     ```bash
-    sudo apt install byobu && git clone git@github.com:Osaka-University-Harada-Laboratory/sda5f_tutorials.git --depth 1 && cd sda5f_tutorials && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel   
+    sudo apt install byobu && git clone git@github.com:UOsaka-Harada-Laboratory/sda5f_tutorials.git --depth 1 && cd sda5f_tutorials && COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel   
     ```
 
 ## Usage with docker

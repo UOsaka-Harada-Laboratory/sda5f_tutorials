@@ -58,7 +58,7 @@ WORKDIR /catkin_ws/src/
 RUN git clone https://github.com/ros-industrial/industrial_core.git -b melodic \
     && cd industrial_core \
     && git reset --hard edcffadd039b413b126eac8eb49b655f4c1cc00b
-RUN git clone https://github.com/Osaka-University-Harada-Laboratory/onrobot.git \
+RUN git clone https://github.com/UOsaka-Harada-Laboratory/onrobot.git \
     && cd onrobot \
     && git reset --hard cf4399b848461977851c37a3a832a2352d8db369
 RUN git clone https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins.git \
