@@ -18,8 +18,8 @@
   - NVIDIA GeForce RTX3070
     - NVIDIA Driver 470.199.02
     - CUDA 11.4
-  - Docker 23.0.1
-  - Docker Compose 2.4.1
+  - Docker 27.4.1
+  - Docker Compose 2.32.1
   - NVIDIA Docker 2.12.0
 
 ### SDA5F with OnRobot grippers
