@@ -7,9 +7,6 @@ from moveit_commander import (MoveGroupCommander,
                               RobotCommander,
                               PlanningSceneInterface)
 
-from industrial_msgs.msg import RobotStatus
-
-
 def show_joint_values(mgc):
     """Shows joint values with rospy log info."""
     rjs = mgc.get_current_joint_values()

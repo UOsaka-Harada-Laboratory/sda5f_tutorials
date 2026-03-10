@@ -377,7 +377,7 @@ def demo_pickplace():
             is_ready_leef,
             is_ready_reef,
             is_ready_torso):
-        """Defines right end effector motions in a thread."""
+        """Defines torso motions in a thread."""
         rospy.loginfo("torso: start thread")
 
         wait_for_ready(is_ready_torso)

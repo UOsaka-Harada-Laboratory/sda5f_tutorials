@@ -32,7 +32,7 @@ def save_sda5f_status(status):
 
 
 def wait_for_sda5f_ready():
-    """Wates for the sda5f ready."""
+    """Waits for the sda5f ready."""
     while True:
         rospy.sleep(rospy.Duration.from_sec(0.1))
         if sda5f_in_motion == 0:
@@ -47,7 +47,7 @@ def save_rg6_status(status):
 
 
 def wait_for_rg6_ready():
-    """Wates for the rg6 ready."""
+    """Waits for the rg6 ready."""
     while True:
         rospy.sleep(rospy.Duration.from_sec(0.1))
         if rg6_status != 1:
@@ -62,18 +62,16 @@ class ThreadWithReturnValue(Thread):
             target=None,
             name=None,
             args=(),
-            kwargs={},
-            Verbose=None):
-        Thread.__init__(self, group, target, name, args, kwargs, Verbose)
+            kwargs={}):
+        Thread.__init__(self, group, target, name, args, kwargs)
         self._return = None
 
     def run(self):
-        if self._Thread__target is not None:
-            self._return = self._Thread__target(
-                *self._Thread__args, **self._Thread__kwargs)
+        if self._target is not None:
+            self._return = self._target(*self._args, **self._kwargs)
 
-    def join(self):
-        Thread.join(self)
+    def join(self, *args):
+        Thread.join(self, *args)
         return self._return
 
 
@@ -159,23 +157,21 @@ def demo_pickplace():
     rospy.sleep(rospy.Duration.from_sec(2))
 
     if sda5f_e_stopped == 1:
-        rospy.loginfo("Error on sda5f: Emergency is actvated.\n")
+        rospy.loginfo("Error on sda5f: Emergency is activated.\n")
         rospy.signal_shutdown("Finished.")
         rospy.sleep(rospy.Duration.from_sec(1))
         return -1
     if sda5f_motion_possible == 0:
         rospy.loginfo(
-            "Error on sda5f: Motion is not possible.",
-            "Motor is not enabled.\n")
+            "Error on sda5f: Motion is not possible. Motor is not enabled.")
         rospy.signal_shutdown("Finished.")
         rospy.sleep(rospy.Duration.from_sec(1))
         return -1
     # left (72) or right (104) finger's safety swith is activated
     if (rg6_status == 72) or (rg6_status == 104):
         rospy.loginfo(
-            "Error on rg6:",
-            "Safety circuit 1 is activated so the gripper cannot move.",
-            "Any of the safety switch is pushed.\n")
+            "Error on rg6: Safety circuit 1 is activated so the gripper cannot move."
+            " Any of the safety switch is pushed.")
         rospy.signal_shutdown("Finished.")
         rospy.sleep(rospy.Duration.from_sec(1))
         return -1
@@ -452,7 +448,7 @@ def demo_pickplace():
             is_ready_leef,
             is_ready_reef,
             is_ready_torso):
-        """Defines right end effector motions in a thread."""
+        """Defines torso motions in a thread."""
         rospy.loginfo("torso: start thread")
 
         wait_for_ready(is_ready_torso)

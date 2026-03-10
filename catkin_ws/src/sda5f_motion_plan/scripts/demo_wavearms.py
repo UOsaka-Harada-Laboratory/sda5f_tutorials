@@ -8,7 +8,6 @@ from moveit_commander import (MoveGroupCommander,
                               PlanningSceneInterface)
 
 from industrial_msgs.msg import RobotStatus
-from sda5f_motion_plan.srv import SetCommand
 
 sda5f_e_stopped = 0
 sda5f_motion_possible = 0
@@ -55,14 +54,13 @@ def demo_wavearms():
     rospy.sleep(rospy.Duration.from_sec(1))
 
     if sda5f_e_stopped == 1:
-        rospy.loginfo("Error on sda5f: Emergency is actvated.\n")
+        rospy.loginfo("Error on sda5f: Emergency is activated.\n")
         rospy.signal_shutdown("Finished.")
         rospy.sleep(rospy.Duration.from_sec(1))
         return -1
     if sda5f_motion_possible == 0:
         rospy.loginfo(
-            "Error on sda5f: Motion is not possible.",
-            "Motor is not enabled.\n")
+            "Error on sda5f: Motion is not possible. Motor is not enabled.")
         rospy.signal_shutdown("Finished.")
         rospy.sleep(rospy.Duration.from_sec(1))
         return -1

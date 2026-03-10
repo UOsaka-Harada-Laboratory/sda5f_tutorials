@@ -47,5 +47,6 @@ catkin_install_python(
         scripts/demo_pickplace_joint_fake.py
         scripts/demo_pickplace_joint.py
         scripts/demo_wavearms.py
+        scripts/demo_wavearms_fake.py
         scripts/object_tf_publisher.py
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
